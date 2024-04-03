@@ -3,16 +3,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "trck"
+name = "SSGAC-ENV"
 version = "0.0.0"
 authors = [{ name = "Mahdi Mir", email = "imahdimir@gmail.com" }]
-description = "Automate Time Track Google Sheet"
+description = "SSGAC Environment VARs"
 readme = "README.md"
 dependencies = [
-    "pandas",
-    "google-api-python-client",
-    "google-auth-httplib2",
-    "google-auth-oauthlib",
-    "gspread",
-    "mtok",
+    "dotsi",
 ]
