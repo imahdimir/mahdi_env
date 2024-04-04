@@ -1,1 +1,1 @@
-from .env import read_env
+from .env import get_env
