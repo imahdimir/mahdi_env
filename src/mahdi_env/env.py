@@ -32,7 +32,6 @@ def read_env() :
 
     for line in result[0].decode().splitlines() :
         var , _ , value = line.partition('=')
-        print(var , value)
         environ[var] = value
 
     if not 'DB' in environ :
