@@ -25,7 +25,7 @@ def get_env() -> ENVDict :
 
     fn = Path(f"{environ['HOME']}/.export")
     if not fn.exists() :
-        fn = Path(f"/homes/nber/mahdimir/.export")
+        fn = Path('/homes/nber/mahdimir/.export')
 
     with open(fn) as f :
         script = f.read()
