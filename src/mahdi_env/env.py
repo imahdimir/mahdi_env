@@ -9,15 +9,21 @@ import subprocess
 from os import environ
 from pathlib import Path
 
-import dotsi
+class ENVDict(dict) :
+    """ This calss is a subclass of dict that returns a default value of
+    empty string when the key is not present, this is useful when the ENV
+    is not defined so the programm doesn't crash.
+    """
 
-ENV = dict(environ)
+    def __getitem__(self , key , default = '') :
+        return super().__getitem__(key) if key in self else default
 
-def read_env() :
-    if 'DB' in ENV :
-        return dotsi.fy(ENV)
+def get_env() -> ENVDict :
+    """ Reads the environment variables from the .export file and returns them """
+    if 'DB' in environ :
+        return ENVDict(environ)
 
-    fn = Path(f"{ENV['HOME']}/.export")
+    fn = Path(f"{environ['HOME']}/.export")
     if not fn.exists() :
         fn = Path(f"/homes/nber/mahdimir/.export")
 
@@ -35,6 +41,6 @@ def read_env() :
         environ[var] = value
 
     if not 'DB' in environ :
-        raise Exception('DB is not set')
+        raise Exception('DB is not set in environment variables.')
 
-    return dotsi.fy(dict(environ))
+    return ENVDict(environ)
