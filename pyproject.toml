@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "SSGAC-ENV"
+name = "SSGAC_ENV"
 version = "0.0.0"
 authors = [{ name = "Mahdi Mir", email = "imahdimir@gmail.com" }]
 description = "SSGAC Environment VARs"
