@@ -1,3 +1,5 @@
+`pip install mahdi_env`
+`from mahdi_env import get_env()
 `get_env()` returns all environment variables on a machine, [especially] including those inside `$HOME/.export` (if exists).
 
 `get_env()` returns a special dictionary containing all environment variables as keys and their values as dictionary values. 
